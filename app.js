@@ -1,13 +1,14 @@
 // const csv = "data_copy.csv"
 const json1 = "countries.json"
-const json2 = "data_copy.json"
+const json2 = "2017data.json"
 
 
 d3.json(json2)
 .then(function (data) {
 
   // check if the data successfully loaded.
-  //console.log(data);
+  console.log(data);
+
 });
 
 // create a function to initialize the dashboard
@@ -24,11 +25,12 @@ function dashboard() {
       });
 
       //load default data for first id
-      let first = (data.countries[0])
+      let firstCountry = (data.countries[0])
+      let firstYear = (data.years[0])
 
-      changeYear();
+      changeYear(firstYear);
       firstJson();
-      display_emissions(first);
+      display_emissions(firstCountry);
 
   });
 }
@@ -41,19 +43,10 @@ function changeYear() {
       //set up a variable to select the demographics panel
       var panel = d3.select("#selYear");
 
-      // // filter sample results for each sample id
-      // let sample = data.Years.filter(y => y.id == x);
-
-      // // get results for first id
-      // let result = sample[0];
-      // //console.log(result);
-
-      // // clear existing metadata
-      // panel.html("");
-
       // load metadata using key-value pair
       Object.entries(data.years).forEach(([k,v])=>{
           panel.append("option").attr("value", v).text(v);
+          console.log(v)
       });
       
   });
@@ -63,8 +56,9 @@ function changeYear() {
 function firstJson() {
 
   d3.json(json2).then(function(data) {
-    let first = (data.Country[0]);
-    console.log(first);      
+    var year = data[0].Year;
+    console.log(year)
+
   });
 }
 
@@ -76,7 +70,7 @@ function display_emissions(x){
       var panel = d3.select("#sample-metadata");
 
       // filter sample results for each sample id
-      let sample = data.Total.filter(y => y.id == x);
+      let sample = data.filter(y => y.Country == x && y.Year == 2021);
 
       // get results for first id
       let result = sample[0];
@@ -108,3 +102,5 @@ function optionChanged(selection) {
 
 // call the dashboard function
 dashboard();
+
+//data.Country[0],data.Year[0],data.Total[0],data.Coal[0],data.Oil[0],data.Gas[0],data.Cement[0],data.Flaring[0],data.Other[0]
