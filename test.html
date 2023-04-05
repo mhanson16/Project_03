@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<style>
+* {box-sizing: border-box}
+body {font-family: Verdana, sans-serif; margin:0}
+
+/* Slideshow container */
+.slideshow-container {
+  position: relative;
+  background: #299;
+}
+
+/* Slides */
+.mySlides {
+  display: none;
+  padding: 80px;
+  text-align: center;
+}
+
+/* Next & previous buttons */
+.prev, .next {
+  cursor: pointer;
+  position: absolute;
+  top: 50%;
+  width: auto;
+  margin-top: -30px;
+  padding: 16px;
+  color: #888;
+  font-weight: bold;
+  font-size: 20px;
+  border-radius: 0 3px 3px 0;
+  user-select: none;
+}
+
+/* Position the "next button" to the right */
+.next {
+  position: absolute;
+  right: 0;
+  border-radius: 3px 0 0 3px;
+}
+
+/* On hover, add a black background color with a little bit see-through */
+.prev:hover, .next:hover {
+  background-color: rgba(0,0,0,0.8);
+  color: white;
+}
+
+/* The dot/bullet/indicator container */
+.dot-container {
+    text-align: center;
+    padding: 20px;
+    background: #ddd;
+}
+
+/* The dots/bullets/indicators */
+.dot {
+  cursor: pointer;
+  height: 15px;
+  width: 15px;
+  margin: 0 2px;
+  background-color: #bbb;
+  border-radius: 50%;
+  display: inline-block;
+  transition: background-color 0.6s ease;
+}
+
+/* Add a background color to the active dot/circle */
+.active, .dot:hover {
+  background-color: #717171;
+}
+
+</style>
+</head>
+<body>
+
+<div class="slideshow-container">
+
+<div class="mySlides">
+  <h2>Coal</h2>
+
+  <p> <b>Overview:</b> When coal is burned, the carbon in the coal combines with oxygen to form carbon dioxide. Coal is not 100 percent carbon: burning a pound of coal emits 2.07 pounds of CO2.</p>
+  <p> <b> Major Contributors:</b> Electricity Production</p>
+
+</div>
+
+<div class="mySlides">
+  <h2>Oil</h2>
+<p> <b>Overview:</b> Oil refining processes are energy-intensive, requiring considerable amounts of direct or indirect heat. Between 7% and 15% of the crude oil input is used by the refinery processes.</p>
+  <p> <b> Major Contributors:</b> Transportation (road, aviation, pipeline), Chemical & petrochemical (manufacturing of fertilizers, pharmaceuticals, refrigerants), Gas and Diesel are main products.</p> 
+</div>
+
+<div class="mySlides">
+  <h2>Cement</h2>
+<p> <b>Overview:</b> Carbon dioxide is emitted as a by-product of clinker production, an intermediate product in cement manufacture, in which calcium carbonate (CaCO3) is calcinated and converted to lime (CaO), the primary component of cement.</p>
+  <p> <b> Major Contributors:</b> Construction (mainly nonresidential construction and government construction projects).</p> 
+</div>
+
+<div class="mySlides">
+  <h2>Gas</h2>
+<p> <b>Overview:</b> Every gallon of gasoline burned creates about 8,887 grams of CO2.</p>
+  <p> <b> Major Contributors:</b> Chemicals & petrochemicals: ammonia, which is used for purifying water supplies, cleaning products, and as a refrigerant, and used in the production of many materials, including plastic, fertilizers, pesticides, and textiles.</p> 
+</div>
+
+<div class="mySlides">
+  <h2>Flaring</h2>
+<p> <b>Overview:</b> The process of burning excess natural gas at the production well using a dedicated flare to ignite the methane and other components in the gas, which can result in both methane and carbon dioxide emissions (CO2).</p>
+  <p> <b> Major Contributors:</b> Oil extraction and processing.</p> 
+</div>
+
+<a class="prev" onclick="plusSlides(-1)">❮</a>
+<a class="next" onclick="plusSlides(1)">❯</a>
+
+</div>
+
+<div class="dot-container">
+  <span class="dot" onclick="currentSlide(1)"></span> 
+  <span class="dot" onclick="currentSlide(2)"></span> 
+  <span class="dot" onclick="currentSlide(3)"></span>
+  <span class="dot" onclick="currentSlide(2)"></span> 
+  <span class="dot" onclick="currentSlide(3)"></span>
+</div>
+
+<script>
+var slideIndex = 1;
+showSlides(slideIndex);
+
+function plusSlides(n) {
+  showSlides(slideIndex += n);
+}
+
+function currentSlide(n) {
+  showSlides(slideIndex = n);
+}
+
+function showSlides(n) {
+  var i;
+  var slides = document.getElementsByClassName("mySlides");
+  var dots = document.getElementsByClassName("dot");
+  if (n > slides.length) {slideIndex = 1}    
+  if (n < 1) {slideIndex = slides.length}
+  for (i = 0; i < slides.length; i++) {
+      slides[i].style.display = "none";  
+  }
+  for (i = 0; i < dots.length; i++) {
+      dots[i].className = dots[i].className.replace(" active", "");
+  }
+  slides[slideIndex-1].style.display = "block";  
+  dots[slideIndex-1].className += " active";
+}
+</script>
+
+</body>
+</html> 
+
