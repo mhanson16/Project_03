@@ -23,4 +23,6 @@ The most challenging part of the assignment was working with a JS library that w
 
 Web page is published using GitPages and can be accessed via the following link: https://mhanson16.github.io/Project_03/
 
+Created some of the Pie charts using pandas library to find out the top contributors of CO2 Emissions for various Categories  i.e. CO2 emissions by Coal, Oil, Gas, Flaring, Cement etc. 
+
 Enjoy!
