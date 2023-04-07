@@ -23,6 +23,6 @@ The most challenging part of the assignment was working with a JS library that w
 
 Web page is published using GitPages and can be accessed via the following link: https://mhanson16.github.io/Project_03/
 
-Created some of the Pie charts using pandas library to find out the top contributors of CO2 Emissions for various Categories  i.e. CO2 emissions by Coal, Oil, Gas, Flaring, Cement etc. 
+Created some of the Pie charts using pandas library to find out the top contributors of CO2 Emissions for various Categories  i.e. CO2 emissions by Coal, Oil, Gas, Flaring, Cement etc. The code for these charts can be found in the file Pandas_Pie_Charts.ipynb and the dataset used can be found at Initial_Data/GCB2022v27_percapita_flat.csv , this file was converted to excel and saved under 'PF_Files/GCB2022v27_percapita_flat.xlsx' location. 
 
 Enjoy!
